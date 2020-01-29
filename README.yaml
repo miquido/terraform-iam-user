@@ -1,0 +1,23 @@
+name: miquido-iam-user
+bitbucket_repo: miquido/terraform-iam-user
+badges: []
+related: []
+description: |-
+  The module allows to quickly provision IAM users and attach to specific IAM groups
+usage: |-
+  ```hcl
+  module "iam-user-konrad-obal" {
+    source = "./modules/iam-user"
+
+    name            = "konrad.obal@miquido.com"
+    role            = "DevOps"
+    groups          = ["${local.iam_group_devops}"]
+    additional_tags = "${var.tags}"
+  }
+  ```
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+contributors:
+  - name: "Konrad Obal"
+    github: "k911"
