@@ -1,5 +1,6 @@
 name: miquido-iam-user
-bitbucket_repo: miquido/terraform-iam-user
+repos:
+  gitlab: miquido/terraform/miquido-iam-user
 badges: []
 related: []
 description: |-

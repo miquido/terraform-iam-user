@@ -5,6 +5,10 @@
 The module allows to quickly provision IAM users and attach to specific IAM groups
 ---
 **Terraform Module**
+
+
+GitLab Repository: https://gitlab.com/miquido/terraform/miquido-iam-user
+
 ## Usage
 
 ```hcl
@@ -34,32 +38,42 @@ Available targets:
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13 |
-| aws | >= 2.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 2.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 2.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_iam_user.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user) | resource |
+| [aws_iam_user_group_membership.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user_group_membership) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| additional\_tags | Additional tags to apply on all created resources | `map(string)` | `{}` | no |
-| company | Value for the Company tag on IAM User. | `string` | `"Miquido"` | no |
-| groups | List of IAM user groups this user should belong to in the account | `list(string)` | `[]` | no |
-| name | Desired name for the IAM user. We recommend using email addresses. | `string` | n/a | yes |
-| role | Value for the Role tag on IAM User. | `string` | n/a | yes |
+| <a name="input_additional_tags"></a> [additional\_tags](#input\_additional\_tags) | Additional tags to apply on all created resources | `map(string)` | `{}` | no |
+| <a name="input_company"></a> [company](#input\_company) | Value for the Company tag on IAM User. | `string` | `"Miquido"` | no |
+| <a name="input_groups"></a> [groups](#input\_groups) | List of IAM user groups this user should belong to in the account | `list(string)` | `[]` | no |
+| <a name="input_name"></a> [name](#input\_name) | Desired name for the IAM user. We recommend using email addresses. | `string` | n/a | yes |
+| <a name="input_role"></a> [role](#input\_role) | Value for the Role tag on IAM User. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| arn | The ARN assigned by AWS for this user |
-| name | IAM user name |
-
+| <a name="output_arn"></a> [arn](#output\_arn) | The ARN assigned by AWS for this user |
+| <a name="output_name"></a> [name](#output\_name) | IAM user name |
 <!-- markdownlint-restore -->
 
 
@@ -81,7 +95,7 @@ Available targets:
 
 ## Copyright
 
-Copyright © 2017-2020 [Miquido](https://miquido.com)
+Copyright © 2017-2021 [Miquido](https://miquido.com)
 
 
 
